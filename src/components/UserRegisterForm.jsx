@@ -10,7 +10,7 @@ import { useForm } from "../hooks/form-hook";
 import { registerFormInitials } from "../utils/form initial data/RegisterInitials";
 
 const UserRegisterForm = () => {
-  const { formState, inputHandler, page, setPage } =
+  const { formState, inputHandler, page, setPage, title } =
     useForm(registerFormInitials);
 
   const nextStep = () => {
@@ -21,10 +21,10 @@ const UserRegisterForm = () => {
   };
 
   switch (page) {
-    case 1:
+    case 0:
       return (
         <>
-          <ProgressBar pageNumber={page} />
+          <ProgressBar title={title} pageNum={page} />
           <UserPersonalDetails
             values={formState.inputs}
             next={nextStep}
@@ -32,10 +32,10 @@ const UserRegisterForm = () => {
           />
         </>
       );
-    case 2:
+    case 1:
       return (
         <>
-          <ProgressBar pageNumber={page} />
+          <ProgressBar title={title} pageNum={page} />
           <UserWorkDetails
             values={formState.inputs}
             next={nextStep}
@@ -44,10 +44,10 @@ const UserRegisterForm = () => {
           />
         </>
       );
-    case 3:
+    case 2:
       return (
         <>
-          <ProgressBar pageNumber={page} />
+          <ProgressBar title={title} pageNum={page} />
           <ConfirmForm
             values={formState.inputs}
             next={nextStep}
@@ -56,10 +56,10 @@ const UserRegisterForm = () => {
           />
         </>
       );
-    case 4:
+    case 3:
       return (
         <>
-          <ProgressBar pageNumber={page} />
+          <ProgressBar title={title} pageNum={page} />
           <Succes />
         </>
       );
