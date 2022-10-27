@@ -54,7 +54,10 @@ const ProgressBar = ({ title, pageNum }) => {
     <div className="container">
       <div className="content">
         <div className="progressbar">
-          <div className="showProgress" style={{ width: `${progress}%` }}></div>
+          <div
+            className="showProgress"
+            style={{ width: `${progress > 100 ? 100 : progress}%` }}
+          ></div>
           {arr}
         </div>
       </div>
