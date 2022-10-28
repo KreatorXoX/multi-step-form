@@ -23,18 +23,18 @@ const UserRegisterForm = () => {
   switch (page) {
     case 0:
       return (
-        <>
+        <div className="layout">
           <ProgressBar title={title} pageNum={page} />
           <UserPersonalDetails
             values={formState.inputs}
             next={nextStep}
             handleChange={inputHandler}
           />
-        </>
+        </div>
       );
     case 1:
       return (
-        <>
+        <div className="layout">
           <ProgressBar title={title} pageNum={page} />
           <UserWorkDetails
             values={formState.inputs}
@@ -42,11 +42,11 @@ const UserRegisterForm = () => {
             prev={prevStep}
             handleChange={inputHandler}
           />
-        </>
+        </div>
       );
     case 2:
       return (
-        <>
+        <div className="layout">
           <ProgressBar title={title} pageNum={page} />
           <ConfirmForm
             values={formState.inputs}
@@ -54,14 +54,14 @@ const UserRegisterForm = () => {
             prev={prevStep}
             handleChange={() => {}}
           />
-        </>
+        </div>
       );
     case 3:
       return (
-        <>
+        <div className="layout">
           <ProgressBar title={title} pageNum={page} />
           <Succes />
-        </>
+        </div>
       );
 
     default:

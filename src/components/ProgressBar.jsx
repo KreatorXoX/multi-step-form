@@ -33,7 +33,6 @@ const ProgressBar = ({ title, pageNum }) => {
   const [active, setActive] = useState(pageNum);
   const [progress, setProgress] = useState(0);
 
-  console.log(circle, active, progress);
   useEffect(() => {
     setProgress((100 / (circle - 1)) * active);
     setActive(pageNum);
