@@ -39,7 +39,7 @@ const formReducer = (state, action) => {
 export const useForm = (initialInputs, initialValidity) => {
   const [page, setPage] = useState(0);
   const [title, setTitle] = useState({
-    0: "Personal Info",
+    0: "Hele hele minnos Info",
     1: "Work Info",
     2: "Review",
   });
