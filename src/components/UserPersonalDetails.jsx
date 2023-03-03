@@ -16,7 +16,6 @@ const UserPersonalDetails = ({ values, handleChange, next }) => {
             validators={[VALIDATOR_REQUIRE()]}
             initialValue={values.name.value}
             initialValid={values.name.isValid}
-            autoFocus
           />
         </div>
         <div>

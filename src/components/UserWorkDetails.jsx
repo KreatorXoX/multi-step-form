@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../shared/components/Input";
-import { VALIDATOR_REQUIRE } from "../utils/validators";
+import { VALIDATOR_EMAIL, VALIDATOR_REQUIRE } from "../utils/validators";
 const UserWorkDetails = ({ values, handleChange, next, prev }) => {
   let canGoNext =
     values.email.isValid && values.company.isValid && values.role.isValid;
@@ -12,9 +12,9 @@ const UserWorkDetails = ({ values, handleChange, next, prev }) => {
             id="email"
             type="text"
             label="Email"
-            errorText="This field is required"
+            errorText="Enter a valid email address"
             onInputChange={handleChange}
-            validators={[VALIDATOR_REQUIRE()]}
+            validators={[VALIDATOR_EMAIL()]}
             initialValue={values.email.value}
             initialValid={values.email.isValid}
           />

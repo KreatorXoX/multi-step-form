@@ -1,10 +1,21 @@
 import React from "react";
 
-const Succes = () => {
+const Succes = ({ values }) => {
+  let printable = [];
+  for (const key of Object.keys(values)) {
+    printable.push(
+      <p>
+        {key} - {values[key].value}
+      </p>
+    );
+  }
   return (
-    <h2 style={{ textAlign: "center", gridArea: "form" }}>
-      Confirmation Successful
-    </h2>
+    <div>
+      <h2 style={{ textAlign: "center", gridArea: "form" }}>
+        Confirmation Successful
+      </h2>
+      <div>{printable}</div>
+    </div>
   );
 };
 

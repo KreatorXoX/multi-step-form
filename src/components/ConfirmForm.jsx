@@ -7,6 +7,7 @@ const ConfirmForm = ({ values, next, prev, handleChange }) => {
         <div>
           <Input
             id="name"
+            disabled={!values.name.value}
             type="text"
             label="Name"
             errorText="This field is required"
@@ -20,6 +21,7 @@ const ConfirmForm = ({ values, next, prev, handleChange }) => {
         <div>
           <Input
             id="middleName"
+            disabled={!values.middleName.value}
             type="text"
             label="Middle Name"
             errorText=""
@@ -33,6 +35,7 @@ const ConfirmForm = ({ values, next, prev, handleChange }) => {
         <div>
           <Input
             id="surname"
+            disabled={!values.surname.value}
             type="text"
             label="Surname"
             errorText="This field is required"
@@ -46,6 +49,7 @@ const ConfirmForm = ({ values, next, prev, handleChange }) => {
         <div>
           <Input
             id="email"
+            disabled={!values.email.value}
             type="text"
             label="Email"
             errorText="This field is required"
@@ -59,6 +63,7 @@ const ConfirmForm = ({ values, next, prev, handleChange }) => {
         <div>
           <Input
             id="company"
+            disabled={!values.company.value}
             type="text"
             label="Company Name"
             errorText="This field is required"
@@ -72,6 +77,7 @@ const ConfirmForm = ({ values, next, prev, handleChange }) => {
         <div>
           <Input
             id="role"
+            disabled={!values.role.value}
             type="text"
             label="Role"
             errorText="This field is required"

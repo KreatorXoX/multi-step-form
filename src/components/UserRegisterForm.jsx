@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import ProgressBar from "./ProgressBar";
 import UserPersonalDetails from "./UserPersonalDetails";
@@ -9,7 +9,7 @@ import Succes from "./Succes";
 import { useForm } from "../hooks/form-hook";
 import { registerFormInitials } from "../utils/form initial data/RegisterInitials";
 
-const UserRegisterForm = () => {
+const UserRegisterForm = ({ getInfos }) => {
   const { formState, inputHandler, page, setPage, title } =
     useForm(registerFormInitials);
 
@@ -19,12 +19,13 @@ const UserRegisterForm = () => {
   const prevStep = () => {
     setPage((prev) => prev - 1);
   };
-
+  useEffect(() => {
+    getInfos(title, page);
+  }, [title, page]);
   switch (page) {
     case 0:
       return (
         <div className="layout">
-          <ProgressBar title={title} pageNum={page} />
           <UserPersonalDetails
             values={formState.inputs}
             next={nextStep}
@@ -35,7 +36,6 @@ const UserRegisterForm = () => {
     case 1:
       return (
         <div className="layout">
-          <ProgressBar title={title} pageNum={page} />
           <UserWorkDetails
             values={formState.inputs}
             next={nextStep}
@@ -47,7 +47,6 @@ const UserRegisterForm = () => {
     case 2:
       return (
         <div className="layout">
-          <ProgressBar title={title} pageNum={page} />
           <ConfirmForm
             values={formState.inputs}
             next={nextStep}
@@ -59,8 +58,7 @@ const UserRegisterForm = () => {
     case 3:
       return (
         <div className="layout">
-          <ProgressBar title={title} pageNum={page} />
-          <Succes />
+          <Succes values={formState.inputs} />
         </div>
       );
 

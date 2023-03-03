@@ -24,7 +24,9 @@
 .form-control select {
   display: inline-block;
 }
-
+.form-control input:read-only {
+  pointer-events: none;
+}
 .form-control label {
   font-weight: bold;
   margin-bottom: 0.5rem;

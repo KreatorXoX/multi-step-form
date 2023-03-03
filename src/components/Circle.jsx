@@ -3,9 +3,7 @@ import React from "react";
 const Circle = ({ classes, title }) => {
   return (
     <>
-      <div className={classes}>
-        <div className="circleLabel">{title}</div>
-      </div>
+      <div className={classes} data-title={title}></div>
     </>
   );
 };
